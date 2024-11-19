@@ -1,0 +1,23 @@
+server:
+  port: 8080
+  error:
+    include-message: always
+#Configuracion de spring
+spring:
+  #Configuracion de migracion
+  flyway:
+    enabled: true
+    baselineVersion: 1
+    locations:
+    classpath: db/migration
+    sqlMigrationSuffixes: .sql
+    baselineOnMigrate: true
+    sqlMigrationPrefix: V
+    schemas: public
+
+
+  datasource:
+    url: jdbc:postgresql://ep-cold-breeze-a57bprdu.us-east-2.aws.neon.tech:5432/crm_db
+    username: app_db_owner
+    password: bJey8Op3LrHi
+    driverClassName: org.postgresql.Driver
